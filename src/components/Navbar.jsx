@@ -115,7 +115,17 @@ function Navbar() {
                 Contact
               </a>
             </li>
+            {/* Donate Link */}
+            <li>
+            <a href="#Donate" className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"> Donate</a>
+          </li>
+          {/* Watch Live */}
+            <li>
+            <a href="#WatchLive" className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"> Watch Live</a>
+          </li>
           </ul>
+
+          
 
         </div>
 
