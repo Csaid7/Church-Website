@@ -8,53 +8,26 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    // NAVBAR CONTAINER
-    // bg-white = white background
-    // shadow-md = medium drop shadow (makes it look elevated)
-    // sticky top-0 = sticks to top when scrolling
-    // z-10 = appears above other content
-    <nav className="bg-white shadow-md sticky top-0 z-10">
-      
-      {/* INNER CONTAINER */}
-      {/* container = max-width responsive container */}
-      {/* mx-auto = centers the container horizontally */}
-      {/* px-4 = padding left and right (1rem = 16px) */}
-      {/* py-4 = padding top and bottom */}
-      <div className="container mx-auto px-7 py-7">
-        
-        {/* FLEX CONTAINER - puts logo left, links right */}
-        {/* flex = enables flexbox layout */}
-        {/* justify-between = pushes items to opposite ends */}
-        {/* items-center = centers items vertically */}
+    <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          
-          {/* LEFT SIDE: CHURCH NAME */}
+
           <div>
-            {/* text-2xl = font size 24px */}
-            {/* font-bold = bold weight */}
-            {/* text-blue-600 = blue color (#2563eb) */}
-            {/* cursor-pointer = shows hand cursor on hover */}
-            <h1 className="text-5xl font-bold text-yellow-600 cursor-pointer">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
               Success Point Church
             </h1>
           </div>
 
-          {/* HAMBURGER MENU BUTTON - only visible on mobile */}
-          {/* md:hidden = hidden on medium screens and up (768px+) */}
-          {/* onClick toggles menu between open/closed */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-gray-600 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {/* SVG icon for hamburger menu (3 horizontal lines) */}
-            {/* w-8 h-8 = width and height of 32px */}
             <svg
-              className="w-8 h-8"
+              className="w-7 h-7"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              {/* Three horizontal lines to make hamburger icon */}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -64,119 +37,114 @@ function Navbar() {
             </svg>
           </button>
 
-          {/* RIGHT SIDE: NAVIGATION LINKS - Desktop */}
-          {/* hidden = hidden on mobile screens */}
-          {/* md:flex = shows as flex on medium screens and up (768px+) */}
-          {/* space-x-8 = 2rem (32px) space between each item */}
-          {/* list-none = removes bullet points */}
-          <ul className="hidden md:flex space-x-8 list-none">
-            
-            {/* HOME LINK */}
-            <li>
-              {/* text-gray-700 = dark gray color */}
-              {/* hover:text-blue-600 = turns blue when mouse hovers */}
-              {/* transition = smooth color change animation */}
-              {/* duration-200 = animation takes 200 milliseconds */}
-              {/* font-medium = slightly bold */}
-              <a 
-                href="#home" 
-                className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
-              >
-                Home
-              </a>
-            </li>
-
-            {/* ABOUT LINK */}
-            <li>
-              <a 
-                href="#about" 
-                className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
-              >
-                About
-              </a>
-            </li>
-
-            {/* SERVICES LINK */}
-            <li>
-              <a 
-                href="#services" 
-                className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
-              >
-                Services
-              </a>
-            </li>
-
-            {/* CONTACT LINK */}
-            <li>
-              <a 
-                href="#contact" 
-                className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
-              >
-                Contact
-              </a>
-            </li>
-            {/* Donate Link */}
-            <li>
-            <a href="#Donate" className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"> Donate</a>
-          </li>
-          {/* Watch Live */}
-            <li>
-            <a href="#WatchLive" className="text-2xl text-gray-700 hover:text-blue-600 transition duration-200 font-medium"> Watch Live</a>
-          </li>
-          </ul>
-
-          
-
-        </div>
-
-        {/* MOBILE MENU - only shows when hamburger is clicked */}
-        {/* Conditional rendering: only shows if isMenuOpen is true */}
-        {/* md:hidden = hidden on medium screens and up */}
-        {/* mt-4 = margin top 1rem */}
-        {isMenuOpen && (
-          <ul className="md:hidden mt-4 space-y-4 list-none">
-
-            {/* MOBILE HOME LINK */}
+          <ul className="hidden md:flex items-center space-x-6 list-none">
             <li>
               <a
                 href="#home"
-                className="block text-xl text-gray-700 hover:text-blue-600 transition duration-200"
-                onClick={() => setIsMenuOpen(false)} // Close menu when link is clicked
+                className="text-base text-gray-700 hover:text-gray-900 transition font-medium"
               >
                 Home
               </a>
             </li>
-
-            {/* MOBILE ABOUT LINK */}
             <li>
               <a
                 href="#about"
-                className="block text-xl text-gray-700 hover:text-blue-600 transition duration-200"
+                className="text-base text-gray-700 hover:text-gray-900 transition font-medium"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#Services"
+                className="text-base text-gray-700 hover:text-gray-900 transition font-medium"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="text-base text-gray-700 hover:text-gray-900 transition font-medium"
+              >
+                Contact
+              </a>
+            </li>
+            <li>
+              <a
+                href="#Donate"
+                className="bg-gray-900 text-white px-5 py-2 rounded-md hover:bg-gray-800 transition text-sm font-semibold"
+              >
+                Donate
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/share/1CUixy4H61/?mibextid=wwXIfr"
+                className="bg-red-600 text-white px-5 py-2 rounded-md hover:bg-red-700 transition text-sm font-semibold flex items-center gap-1"
+              >
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                Live
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        {isMenuOpen && (
+          <ul className="md:hidden mt-6 space-y-3 pb-4 list-none border-t border-gray-200 pt-4">
+            <li>
+              <a
+                href="#home"
+                className="block text-gray-700 hover:text-gray-900 transition py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="block text-gray-700 hover:text-gray-900 transition py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
             </li>
-
-            {/* MOBILE SERVICES LINK */}
             <li>
               <a
-                href="#services"
-                className="block text-xl text-gray-700 hover:text-blue-600 transition duration-200"
+                href="#Services"
+                className="block text-gray-700 hover:text-gray-900 transition py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </a>
             </li>
-
-            {/* MOBILE CONTACT LINK */}
             <li>
               <a
                 href="#contact"
-                className="block text-xl text-gray-700 hover:text-blue-600 transition duration-200"
+                className="block text-gray-700 hover:text-gray-900 transition py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
+              </a>
+            </li>
+            <li>
+              <a
+                href="#Donate"
+                className="block bg-gray-900 text-white px-4 py-3 rounded-md hover:bg-gray-800 transition text-center font-semibold"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Donate
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/share/1CUixy4H61/?mibextid=wwXIfr"
+                className="block bg-red-600 text-white px-4 py-3 rounded-md hover:bg-red-700 transition text-center font-semibold"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Watch Live
               </a>
             </li>
           </ul>

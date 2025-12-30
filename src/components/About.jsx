@@ -30,71 +30,60 @@ function About(){
     ];
     
     return(
-        // py-20 = more vertical padding for breathing room (5rem top and bottom)
-        // bg-white = clean white background
-        <section className="py-20 bg-white">
+        <section id="about" className="py-16 md:py-24 bg-gray-50">
+            <div className="max-w-6xl mx-auto px-6">
 
-            {/* container for the content in the center */}
-            {/* max-w-4xl = limits width for better readability */}
-            {/* mx-auto = centers the container */}
-            {/* px-6 = comfortable horizontal padding */}
-            <div className="max-w-4xl mx-auto px-6">
-
-                {/* Section Title */}
-                {/* text-5xl = larger, more impactful size (48px) */}
-                {/* font-bold = bold weight */}
-                {/* text-center = centered alignment */}
-                {/* text-gray-900 = very dark gray for strong contrast */}
-                {/* mb-8 = more spacing below (2rem) */}
-                {/* tracking-tight = tighter letter spacing for modern look */}
-                <h2 className="text-5xl font-bold text-center text-gray-900 mb-8 tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                     About Us
                 </h2>
 
-                {/* Subtitle */}
-                {/* text-3xl = nice size for subtitle (30px) */}
-                {/* font-semibold = semi-bold for hierarchy */}
-                {/* text-center = centered alignment */}
-                {/* text-gray-700 = darker gray for readability */}
-                {/* mb-12 = good spacing below (3rem) */}
-                {/* leading-relaxed = comfortable line height */}
-                <h3 className="text-3xl font-semibold text-center text-gray-700 mb-12 leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-semibold text-center text-gray-600 mb-16">
                     What We Believe
                 </h3>
-                <p className="text-2xl font-semibold mb-10">
+
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-16 max-w-3xl mx-auto">
                     This where we are going to write about what we believe in!!
-                     This where we are going to write about what we believe in!!
-                      This where we are going to write about what we believe in!!
-                       This where we are going to write about what we believe in!!
-                        This where we are going to write about what we believe in!!
-                         This where we are going to write about what we believe in!!
-                          This where we are going to write about what we believe in!!
-                           This where we are going to write about what we believe in!!
-                           SMall 
-                        
+                    This where we are going to write about what we believe in!!
+                    This where we are going to write about what we believe in!!
+                    This where we are going to write about what we believe in!!
+                    This where we are going to write about what we believe in!!
+                    This where we are going to write about what we believe in!!
+                    This where we are going to write about what we believe in!!
+                    This where we are going to write about what we believe in!!
+                    Small
                 </p>
 
-                <h3 className="text-3xl font-semibold text-center text-gray-700 mb-12 leading-relaxed">Leadership</h3>
-                {/* Map  */}
-                {leadershipTeam.map((person) => (
+                <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-10">
+                    Our Leadership
+                </h3>
 
-                <div className="flex justify-start gap-80">
-                
-                <div className="w-40 h-40 bg-gray-300 pb-4"></div>
-                <div>
-                <h4 className="text-3xl font-bold">{person.name}</h4>
-                
-                <p className="text-2xl font-semibold">{person.title}</p>
-                <p className="text-1xl font-medium">{person.bio}</p>
-                <a href="#ContactMe"> Contact Info</a>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {leadershipTeam.map((person, index) => (
+                        <div key={index} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition border border-gray-200">
+                            <div className="w-28 h-28 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full mb-5 mx-auto flex items-center justify-center">
+                                <span className="text-3xl font-bold text-gray-800">
+                                    {person.name.charAt(0)}
+                                </span>
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-gray-900 mb-2">
+                                    {person.name}
+                                </h4>
+                                <p className="text-base text-gray-600 mb-4">
+                                    {person.title}
+                                </p>
+                                <a
+                                    href="#contact"
+                                    className="text-sm text-gray-900 hover:text-gray-700 font-medium underline"
+                                >
+                                    Contact
+                                </a>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                </div>
-
-
-    ))}                
 
             </div>
-
         </section>
     );
 
