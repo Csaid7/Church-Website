@@ -17,7 +17,7 @@ function About(){
 
         },
         {
-            name:"Placid N/A",
+            name:"Placid Namegabe",
             title:"Associate Pastor",
 
         },
